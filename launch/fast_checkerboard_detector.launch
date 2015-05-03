@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="cb_detect" type="cb_detect_node" name="checkerboard_detector" ns="checkerboard" output="screen">
+    <param name="grid_size_x" value="3" />
+    <param name="grid_size_y" value="3" />
+    <param name="rect_size_x" value="0.1875" />
+    <param name="rect_size_y" value="0.1875" />
+   	<!--param name="trajectory_file" value="$(find fast_checkerboard_detector)/output/Checkerboard_marker_trajectory.txt" /-->
+   	<param name="write_trajectory" value="false" />
+
+    <remap from="camera_info" to="/ps3eye/left/camera_info" />
+    <remap from="camera_image"  to="/ps3eye/left/image_raw" />
+  </node>
+</launch>
